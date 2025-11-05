@@ -1,0 +1,319 @@
+@import "@/index.scss";
+
+.faq-container {
+  margin: 100px 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 50px;
+  .accordion {
+    width: 100%;
+
+    .faq {
+      width: 70%;
+      cursor: pointer;
+      margin-bottom: 50px;
+      padding-bottom: 50px;
+      border-bottom: 1px solid $white;
+
+      .title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .test {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 20px;
+          h1 {
+            font-size: 1.5rem;
+            color: $white;
+          }
+
+          p {
+            font-size: 1.5rem;
+            color: $white;
+          }
+        }
+
+        img {
+          height: 30px;
+        }
+      }
+
+      .content {
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.3s cubic-bezier(0, 1, 0, 1);
+        p {
+          margin-left: 100px;
+          margin-top: 50px;
+          color: $white;
+          line-height: 30px;
+        }
+      }
+
+      .content.show {
+        max-height: 999px;
+        padding-top: 0.5rem;
+        transition: all 0.3s cubic-bezier(1, 0, 1, 0);
+
+        p {
+          margin-left: 35px;
+          margin-top: 30px;
+          color: $white;
+          line-height: 30px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1700px) {
+  .faq-container {
+    margin: 80px 45px;
+    gap: 45px;
+    .accordion {
+      .faq {
+        margin-bottom: 45px;
+        padding-bottom: 45px;
+
+        .title {
+          .test {
+            gap: 18px;
+            h1 {
+              font-size: 1.4rem;
+            }
+            p {
+              font-size: 1.4rem;
+            }
+          }
+
+          img {
+            height: 28px;
+          }
+        }
+
+        .content {
+          p {
+            margin-left: 30px;
+            margin-top: 45px;
+            line-height: 45px;
+          }
+        }
+
+        .content.show {
+          padding-top: 0.4rem;
+
+          p {
+            margin-left: 30px;
+            margin-top: 28px;
+            line-height: 28px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1500px) {
+  .faq-container {
+    margin: 70px 40px;
+    gap: 40px;
+    .accordion {
+      .faq {
+        width: 80%;
+        margin-bottom: 40px;
+        padding-bottom: 40px;
+
+        .title {
+          .test {
+            gap: 16px;
+            h1 {
+              font-size: 1.3rem;
+            }
+            p {
+              font-size: 1.3rem;
+            }
+          }
+
+          img {
+            height: 26px;
+          }
+        }
+
+        .content {
+          padding-top: 0.35rem;
+          p {
+            font-size: 15px;
+            margin-left: 28px;
+            margin-top: 26px;
+            line-height: 26px;
+          }
+        }
+
+        .content.show {
+          padding-top: 0.35rem;
+
+          p {
+            font-size: 15px;
+            margin-left: 28px;
+            margin-top: 26px;
+            line-height: 26px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .faq-container {
+    margin: 60px 35px;
+    gap: 36px;
+    .accordion {
+      .faq {
+        width: 90%;
+        margin-bottom: 36px;
+        padding-bottom: 36px;
+
+        .title {
+          .test {
+            gap: 16px;
+            h1 {
+              font-size: 1.1rem;
+            }
+            p {
+              font-size: 1.1rem;
+            }
+          }
+
+          img {
+            height: 25px;
+          }
+        }
+
+        .content {
+          padding-top: 0.3rem;
+
+          p {
+            font-size: 14px;
+            margin-left: 26px;
+            margin-top: 24px;
+            line-height: 24px;
+          }
+        }
+
+        .content.show {
+          padding-top: 0.3rem;
+
+          p {
+            font-size: 14px;
+            margin-left: 26px;
+            margin-top: 24px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .faq-container {
+    margin: 50px 30px;
+    gap: 32px;
+    .accordion {
+      .faq {
+        width: 100%;
+        margin-bottom: 34px;
+        padding-bottom: 34px;
+
+        .title {
+          .test {
+            gap: 14px;
+            h1 {
+              font-size: 1rem;
+            }
+            p {
+              font-size: 1rem;
+            }
+          }
+
+          img {
+            height: 24px;
+          }
+        }
+
+        .content {
+          padding-top: 0.25rem;
+
+          p {
+            font-size: 13px;
+            margin-left: 24px;
+            margin-top: 22px;
+            line-height: 26px;
+          }
+        }
+
+        .content.show {
+          padding-top: 0.25rem;
+
+          p {
+            font-size: 13px;
+            margin-left: 24px;
+            margin-top: 22px;
+            line-height: 26px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .faq-container {
+    margin: 30px;
+    gap: 30px;
+    .accordion {
+      .faq {
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+
+        .title {
+          .test {
+            gap: 12px;
+            h1 {
+              font-size: 0.7rem;
+            }
+            p {
+              font-size: 0.7rem;
+            }
+          }
+
+          img {
+            height: 18px;
+          }
+        }
+        .content {
+          p {
+            font-size: 12px;
+            margin-left: 18px;
+            margin-top: 20px;
+            line-height: 22px;
+          }
+        }
+
+        .content.show {
+          p {
+            font-size: 12px;
+            margin-left: 18px;
+            margin-top: 20px;
+            line-height: 22px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -6,9 +6,6 @@ import { Routes, Route } from "react-router-dom";
 //ALert
 import { Toaster } from "react-hot-toast";
 
-//Utils
-import ScrollToTop from "./utils/scrollToTop/ScrollToTop";
-
 //Loader
 import Loader from "./utils/loader/Loader";
 
@@ -19,13 +16,13 @@ import AdminAuthProtectedRoutes from "./protectedRoutes/admin/AdminAuthProtected
 import AdminAccountProtectedRoutes from "./protectedRoutes/admin/AdminAccountProtectedRoutes";
 
 //Layouts
-import AuthRouteLayout from "./layouts/auth/AuthRouteLayout";
 import UserRouteLayout from "./layouts/user/UserRouteLayout";
+import AuthRouteLayout from "./layouts/auth/AuthRouteLayout";
 import AdminRouteLayout from "./layouts/admin/AdminRouteLayout";
 
 //Pages
-import Fallback from "./utils/fallback/Fallback";
-import MobileScreen from "./components/admin/mobileScreen/MobileScreen";
+import Fallback from "./components/global/fallback/Fallback";
+import MobileScreen from "./components/global/mobileScreen/MobileScreen";
 
 //Routes
 import {
@@ -34,34 +31,59 @@ import {
   UserChangePassword,
   UserForgetPassword,
   UserOtp,
+  UserProfile,
+  UserMyTrips,
   UserHome,
   UserAbout,
-  UserContact,
+  UserPrivacyPolicy,
+  UserRefundPolicy,
   UserTermsAndCondition,
-  UserAllTrips,
-  UserSingleTripDetails,
-  UserPlanTrip,
-  UserMyTrips,
-  UserViewProfile,
-  UserEditProfile,
-  UserPayment,
+  UserBali,
+  UserBaliFriends,
+  UserBaliFriendsStandard,
+  UserBaliFriendsDelux,
+  UserBaliFriendsPremium,
+  UserBaliFamily,
+  UserBaliFamilyStandard,
+  UserBaliFamilyDelux,
+  UserBaliFamilyPremium,
+  UserBaliCouple,
+  UserBaliCoupleStandard,
+  UserBaliCoupleDelux,
+  UserBaliCouplePremium,
+  UserBaliCustom,
+  UserBaliCustomStandard,
+  UserBaliCustomDelux,
+  UserBaliCustomPremium,
+  UserPhuket,
+  UserPhuketFriends,
+  UserPhuketFriendsStandard,
+  UserPhuketFriendsDelux,
+  UserPhuketFriendsPremium,
+  UserPhuketCouple,
+  UserPhuketCoupleStandard,
+  UserPhuketCoupleDelux,
+  UserPhuketCouplePremium,
+  UserPhuketFamily,
+  UserPhuketFamilyStandard,
+  UserPhuketFamilyDelux,
+  UserPhuketFamilyPremium,
+  UserPhuketCustom,
+  UserPhuketCustomStandard,
+  UserPhuketCustomDelux,
+  UserPhuketCustomPremium,
 } from "./pageConfig/UserPageConfig";
 import {
   AdminLogin,
-  AdminForgetPassword,
-  AdminChangePassword,
   AdminOtp,
   AdminDashboard,
-  AdminAllUsers,
-  AdminSingleUser,
-  AdminAllTrips,
-  AdminSingleTrip,
+  AdminUsers,
+  AdminTrips,
+  AdminSingleTripDetails,
+  AdminCustom,
   AdminPayment,
   AdminQueries,
-  AdminAllActivities,
-  AdminAddActivity,
-  AdminAllLocations,
-  AdminAddLocation,
+  AdminNewsLetter,
 } from "./pageConfig/AdminPageConfig";
 
 // Routes Data
@@ -93,60 +115,172 @@ const userUnprotectedRoutesData = [
     element: <UserHome />,
   },
   {
-    path: "/about",
+    path: "/about-us",
     element: <UserAbout />,
   },
   {
-    path: "/contact-us",
-    element: <UserContact />,
+    path: "/bali",
+    element: <UserBali />,
+  },
+  {
+    path: "/bali/friends",
+    element: <UserBaliFriends />,
+  },
+  {
+    path: "/bali/friends/standard",
+    element: <UserBaliFriendsStandard />,
+  },
+  {
+    path: "/bali/friends/delux",
+    element: <UserBaliFriendsDelux />,
+  },
+  {
+    path: "/bali/friends/premium",
+    element: <UserBaliFriendsPremium />,
+  },
+  {
+    path: "/bali/family",
+    element: <UserBaliFamily />,
+  },
+  {
+    path: "/bali/family/standard",
+    element: <UserBaliFamilyStandard />,
+  },
+  {
+    path: "/bali/family/delux",
+    element: <UserBaliFamilyDelux />,
+  },
+  {
+    path: "/bali/family/premium",
+    element: <UserBaliFamilyPremium />,
+  },
+  {
+    path: "/bali/couple",
+    element: <UserBaliCouple />,
+  },
+  {
+    path: "/bali/couple/standard",
+    element: <UserBaliCoupleStandard />,
+  },
+  {
+    path: "/bali/couple/delux",
+    element: <UserBaliCoupleDelux />,
+  },
+  {
+    path: "/bali/couple/premium",
+    element: <UserBaliCouplePremium />,
+  },
+  {
+    path: "/bali/custom",
+    element: <UserBaliCustom />,
+  },
+  {
+    path: "/bali/custom/standard",
+    element: <UserBaliCustomStandard />,
+  },
+  {
+    path: "/bali/custom/delux",
+    element: <UserBaliCustomDelux />,
+  },
+  {
+    path: "/bali/custom/premium",
+    element: <UserBaliCustomPremium />,
+  },
+  {
+    path: "/phuket",
+    element: <UserPhuket />,
+  },
+  {
+    path: "/phuket/friends",
+    element: <UserPhuketFriends />,
+  },
+  {
+    path: "/phuket/friends/standard",
+    element: <UserPhuketFriendsStandard />,
+  },
+  {
+    path: "/phuket/friends/delux",
+    element: <UserPhuketFriendsDelux />,
+  },
+  {
+    path: "/phuket/friends/premium",
+    element: <UserPhuketFriendsPremium />,
+  },
+  {
+    path: "/phuket/family",
+    element: <UserPhuketFamily />,
+  },
+  {
+    path: "/phuket/family/standard",
+    element: <UserPhuketFamilyStandard />,
+  },
+  {
+    path: "/phuket/family/delux",
+    element: <UserPhuketFamilyDelux />,
+  },
+  {
+    path: "/phuket/family/premium",
+    element: <UserPhuketFamilyPremium />,
+  },
+  {
+    path: "/phuket/couple",
+    element: <UserPhuketCouple />,
+  },
+  {
+    path: "/phuket/couple/standard",
+    element: <UserPhuketCoupleStandard />,
+  },
+  {
+    path: "/phuket/couple/delux",
+    element: <UserPhuketCoupleDelux />,
+  },
+  {
+    path: "/phuket/couple/premium",
+    element: <UserPhuketCouplePremium />,
+  },
+  {
+    path: "/phuket/custom",
+    element: <UserPhuketCustom />,
+  },
+  {
+    path: "/phuket/custom/standard",
+    element: <UserPhuketCustomStandard />,
+  },
+  {
+    path: "/phuket/custom/delux",
+    element: <UserPhuketCustomDelux />,
+  },
+  {
+    path: "/phuket/custom/premium",
+    element: <UserPhuketCustomPremium />,
+  },
+  {
+    path: "/refund-policy",
+    element: <UserRefundPolicy />,
+  },
+  {
+    path: "/privacy-policy",
+    element: <UserPrivacyPolicy />,
   },
   {
     path: "/terms-and-conditions",
     element: <UserTermsAndCondition />,
   },
-  {
-    path: "/trips",
-    element: <UserAllTrips />,
-  },
-  {
-    path: "/trip/:id",
-    element: <UserSingleTripDetails />,
-  },
 ];
 const userProtectedRoutesData = [
   {
-    path: "/plan-trip",
-    element: <UserPlanTrip />,
+    path: "/profile",
+    element: <UserProfile />,
   },
   {
     path: "/my-trips",
     element: <UserMyTrips />,
-  },
-  {
-    path: "/profile",
-    element: <UserViewProfile />,
-  },
-  {
-    path: "/edit-profile",
-    element: <UserEditProfile />,
-  },
-  {
-    path: "/payment",
-    element: <UserPayment />,
   },
 ];
 const adminAuthRoutesData = [
   {
     path: "/admin/login",
     element: <AdminLogin />,
-  },
-  {
-    path: "/admin/forget-password",
-    element: <AdminForgetPassword />,
-  },
-  {
-    path: "/admin/change-password",
-    element: <AdminChangePassword />,
   },
   {
     path: "/admin/otp",
@@ -160,19 +294,19 @@ const adminProtectedRoutesData = [
   },
   {
     path: "/admin/users",
-    element: <AdminAllUsers />,
-  },
-  {
-    path: "/admin/user/:id",
-    element: <AdminSingleUser />,
+    element: <AdminUsers />,
   },
   {
     path: "/admin/trips",
-    element: <AdminAllTrips />,
+    element: <AdminTrips />,
   },
   {
     path: "/admin/trip/:id",
-    element: <AdminSingleTrip />,
+    element: <AdminSingleTripDetails />,
+  },
+  {
+    path: "/admin/custom",
+    element: <AdminCustom />,
   },
   {
     path: "/admin/payment",
@@ -183,20 +317,8 @@ const adminProtectedRoutesData = [
     element: <AdminQueries />,
   },
   {
-    path: "/admin/activities",
-    element: <AdminAllActivities />,
-  },
-  {
-    path: "/admin/activity",
-    element: <AdminAddActivity />,
-  },
-  {
-    path: "/admin/locations",
-    element: <AdminAllLocations />,
-  },
-  {
-    path: "/admin/location",
-    element: <AdminAddLocation />,
+    path: "/admin/news-letter",
+    element: <AdminNewsLetter />,
   },
 ];
 
@@ -204,82 +326,80 @@ const App = () => {
   return (
     <>
       <Toaster position="top-center" reverseOrder={false} />
-      <ScrollToTop>
-        <Routes>
-          {userAuthRoutesData.map((route, index) => (
-            <Route
-              key={index}
-              path={route.path}
-              element={
-                <Suspense fallback={<Loader />}>
-                  <UserAuthProtectedRoutes>
-                    <AuthRouteLayout>{route.element}</AuthRouteLayout>
-                  </UserAuthProtectedRoutes>
-                </Suspense>
-              }
-            />
-          ))}
-          {userUnprotectedRoutesData.map((route, index) => (
-            <Route
-              key={index}
-              path={route.path}
-              element={
-                <Suspense fallback={<Loader />}>
+      <Routes>
+        {userAuthRoutesData.map((route, index) => (
+          <Route
+            key={index}
+            path={route.path}
+            element={
+              <Suspense fallback={<Loader />}>
+                <UserAuthProtectedRoutes>
+                  <AuthRouteLayout> {route.element}</AuthRouteLayout>
+                </UserAuthProtectedRoutes>
+              </Suspense>
+            }
+          />
+        ))}
+        {userUnprotectedRoutesData.map((route, index) => (
+          <Route
+            key={index}
+            path={route.path}
+            element={
+              <Suspense fallback={<Loader />}>
+                <UserRouteLayout>{route.element}</UserRouteLayout>
+              </Suspense>
+            }
+          />
+        ))}
+        {userProtectedRoutesData.map((route, index) => (
+          <Route
+            key={index}
+            path={route.path}
+            element={
+              <Suspense fallback={<Loader />}>
+                <UserAccountProtectedRoutes>
                   <UserRouteLayout>{route.element}</UserRouteLayout>
-                </Suspense>
-              }
-            />
-          ))}
-          {userProtectedRoutesData.map((route, index) => (
-            <Route
-              key={index}
-              path={route.path}
-              element={
-                <Suspense fallback={<Loader />}>
-                  <UserAccountProtectedRoutes>
-                    <UserRouteLayout>{route.element}</UserRouteLayout>
-                  </UserAccountProtectedRoutes>
-                </Suspense>
-              }
-            />
-          ))}
-          {adminAuthRoutesData.map((route, index) => (
-            <Route
-              key={index}
-              path={route.path}
-              element={
-                <Suspense fallback={<Loader />}>
-                  {window.innerWidth > 1000 ? (
-                    <AdminAuthProtectedRoutes>
-                      <AuthRouteLayout>{route.element}</AuthRouteLayout>
-                    </AdminAuthProtectedRoutes>
-                  ) : (
-                    <MobileScreen />
-                  )}
-                </Suspense>
-              }
-            />
-          ))}
-          {adminProtectedRoutesData.map((route, index) => (
-            <Route
-              key={index}
-              path={route.path}
-              element={
-                <Suspense fallback={<Loader />}>
-                  {window.innerWidth > 1000 ? (
-                    <AdminAccountProtectedRoutes>
-                      <AdminRouteLayout>{route.element}</AdminRouteLayout>
-                    </AdminAccountProtectedRoutes>
-                  ) : (
-                    <MobileScreen />
-                  )}
-                </Suspense>
-              }
-            />
-          ))}
-          <Route path="*" element={<Fallback />} />
-        </Routes>
-      </ScrollToTop>
+                </UserAccountProtectedRoutes>
+              </Suspense>
+            }
+          />
+        ))}
+        {adminAuthRoutesData.map((route, index) => (
+          <Route
+            key={index}
+            path={route.path}
+            element={
+              <Suspense fallback={<Loader />}>
+                {window.innerWidth > 1000 ? (
+                  <AdminAuthProtectedRoutes>
+                    {route.element}
+                  </AdminAuthProtectedRoutes>
+                ) : (
+                  <MobileScreen />
+                )}
+              </Suspense>
+            }
+          />
+        ))}
+        {adminProtectedRoutesData.map((route, index) => (
+          <Route
+            key={index}
+            path={route.path}
+            element={
+              <Suspense fallback={<Loader />}>
+                {window.innerWidth > 1000 ? (
+                  <AdminAccountProtectedRoutes>
+                    <AdminRouteLayout>{route.element}</AdminRouteLayout>
+                  </AdminAccountProtectedRoutes>
+                ) : (
+                  <MobileScreen />
+                )}
+              </Suspense>
+            }
+          />
+        ))}
+        <Route path="*" element={<Fallback />} />
+      </Routes>
     </>
   );
 };

@@ -1,10 +1,10 @@
-//GLobal Components
-import AuthLeftSide from "../../components/auth/AuthLeftSide";
+//User Components
+import UserNavbar from "@/components/user/userNavbar/UserNavbar";
 
 const AuthRouteLayout = ({ children }) => {
   return (
     <>
-      <AuthLeftSide />
+      <UserNavbar />
       {children}
     </>
   );

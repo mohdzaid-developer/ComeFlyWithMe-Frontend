@@ -1,0 +1,257 @@
+.intro-cardContainer {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0px;
+  .intro-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-direction: column;
+    position: relative;
+    top: -25%;
+    height: 600px;
+    width: 1000px;
+    border-radius: 25px;
+    padding: 50px;
+    transform-origin: top;
+    .intro-title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      h2 {
+        text-align: center;
+        margin: 0px;
+        font-size: 30px;
+        font-weight: 600;
+      }
+    }
+    .intro-body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 50px;
+
+      .intro-description {
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 30px;
+        padding: 0px;
+        border: none;
+        margin: 0px;
+        .intro-plans {
+          background-color: transparent;
+          border: 1px solid white;
+          border-radius: 6px;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 10px;
+          padding: 15px;
+          h3 {
+            font-size: 24px;
+            letter-spacing: 1px;
+          }
+          p {
+            font-size: 16px;
+            color: rgb(86, 86, 86);
+            text-align: left;
+            line-height: 20px;
+            font-weight: 600;
+            letter-spacing: 1px;
+          }
+        }
+      }
+
+      .intro-imageContainer {
+        position: relative;
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+        margin-top: 50px;
+        border-radius: 10px;
+
+        .intro-inner {
+          width: 100%;
+          height: 100%;
+        }
+        img {
+          width: 100%;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1500px) {
+  .intro-cardContainer {
+    .intro-card {
+      gap: 40px;
+      height: 70vh;
+      width: 900px;
+      border-radius: 22px;
+      padding: 40px;
+      .intro-title {
+        gap: 9px;
+        h2 {
+          font-size: 28px;
+        }
+      }
+      .intro-body {
+        gap: 40px;
+
+        .intro-description {
+          width: 50%;
+          gap: 20px;
+
+          .intro-plans {
+            gap: 8px;
+            padding: 14px;
+            h3 {
+              font-size: 22px;
+            }
+            p {
+              font-size: 14px;
+              line-height: 19px;
+            }
+          }
+        }
+
+        .intro-imageContainer {
+          margin-top: 0px;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .intro-cardContainer {
+    .intro-card {
+      gap: 35px;
+      width: 700px;
+      border-radius: 15px;
+      padding: 35px;
+      .intro-title {
+        gap: 8px;
+        h2 {
+          font-size: 28px;
+        }
+      }
+      .intro-body {
+        gap: 35px;
+
+        .intro-description {
+          gap: 16px;
+
+          .intro-plans {
+            gap: 7px;
+            padding: 12px;
+            h3 {
+              font-size: 20px;
+            }
+            p {
+              font-size: 13px;
+              line-height: 18px;
+            }
+          }
+        }
+
+        .intro-imageContainer {
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .intro-cardContainer {
+    padding: 0 30px;
+    .intro-card {
+      gap: 35px;
+      width: 100%;
+      height: 50vh;
+      border-radius: 14px;
+      padding: 30px;
+      .intro-title {
+        gap: 6px;
+        h2 {
+          font-size: 26px;
+        }
+      }
+      .intro-body {
+        gap: 32px;
+
+        .intro-description {
+          gap: 14px;
+
+          .intro-plans {
+            gap: 6px;
+            padding: 10px;
+            h3 {
+              font-size: 18px;
+            }
+            p {
+              font-size: 12px;
+              line-height: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .intro-cardContainer {
+    padding: 0 28px;
+    .intro-card {
+      gap: 30px;
+      height: 85vh;
+      border-radius: 13px;
+      padding: 28px;
+      .intro-title {
+        gap: 5.5px;
+        h2 {
+          font-size: 20px;
+        }
+      }
+      .intro-body {
+        gap: 30px;
+        flex-direction: column-reverse;
+
+        .intro-description {
+          width: 100%;
+          gap: 10px;
+
+          .intro-plans {
+            gap: 5px;
+            padding: 10px;
+            h3 {
+              font-size: 17px;
+            }
+          }
+        }
+        .intro-imageContainer {
+          width: 90%;
+          height: 100%;
+
+          margin-top: 0;
+          border-radius: 8px;
+        }
+      }
+    }
+  }
+}

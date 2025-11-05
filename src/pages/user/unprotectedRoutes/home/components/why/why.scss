@@ -1,0 +1,381 @@
+@import "@/index.scss";
+
+.why {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $light-green;
+  padding: 100px 130px;
+
+  .why-container {
+    width: 100%;
+    background-color: $black;
+    border-radius: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 100px;
+    padding: 80px 100px;
+
+    h2 {
+      color: $white;
+      font-size: 48px;
+    }
+
+    .progress {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 100%;
+
+      .progress-box {
+        .progress-bar {
+          position: relative;
+          right: 120px;
+          top: 130px;
+          width: 255px;
+          height: 10px !important;
+          transform: rotate(90deg);
+
+          .MuiLinearProgress-root {
+            height: 10px !important;
+            border-radius: 5px;
+            background-color: $gray;
+
+            .MuiLinearProgress-bar {
+              background-color: $neon-green;
+              border-radius: 5px;
+            }
+          }
+        }
+
+        .text-container {
+          padding-left: 40px;
+          display: flex;
+          justify-content: center;
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 48px;
+
+          p {
+            font-size: 24px;
+            color: $gray;
+            cursor: pointer;
+            transition: color 0.3s ease;
+          }
+
+          p.active {
+            color: $white;
+          }
+        }
+      }
+
+      .show {
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 50px;
+        img {
+          height: 300px;
+        }
+        p {
+          font-size: 22px;
+          color: $white;
+          line-height: 38px;
+          letter-spacing: 1.1px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1700px) {
+  .why {
+    padding: 70px 100px;
+
+    .why-container {
+      border-radius: 18x;
+      gap: 80px;
+      padding: 50px 80px;
+
+      h2 {
+        font-size: 42px;
+      }
+
+      .progress {
+        .progress-box {
+          .progress-bar {
+            right: 100px;
+            top: 115px;
+            width: 210px;
+            height: 10px !important;
+
+            .MuiLinearProgress-root {
+              height: 10px !important;
+
+              .MuiLinearProgress-bar {
+                border-radius: 5px;
+              }
+            }
+          }
+
+          .text-container {
+            padding-left: 35px;
+            gap: 40px;
+
+            p {
+              font-size: 22px;
+            }
+          }
+        }
+
+        .show {
+          gap: 40px;
+          img {
+            height: 250px;
+          }
+          p {
+            font-size: 18px;
+            line-height: 30px;
+            letter-spacing: 1px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1500px) {
+  .why {
+    padding: 60px 90px;
+
+    .why-container {
+      border-radius: 16x;
+      gap: 60px;
+      padding: 50px 80px;
+
+      h2 {
+        font-size: 40px;
+      }
+
+      .progress {
+        .progress-box {
+          .progress-bar {
+            right: 95px;
+            top: 105px;
+            width: 200px;
+            height: 9px !important;
+
+            .MuiLinearProgress-root {
+              height: 9px !important;
+
+              .MuiLinearProgress-bar {
+                border-radius: 5px;
+              }
+            }
+          }
+
+          .text-container {
+            padding-left: 30px;
+            gap: 38px;
+
+            p {
+              font-size: 20px;
+            }
+          }
+        }
+
+        .show {
+          gap: 36px;
+          img {
+            height: 220px;
+          }
+          p {
+            font-size: 17px;
+            line-height: 28px;
+            letter-spacing: 0.9px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .why {
+    padding: 50px;
+
+    .why-container {
+      border-radius: 14x;
+      gap: 50px;
+      padding: 40px 30px;
+
+      h2 {
+        font-size: 40px;
+      }
+
+      .progress {
+        .progress-box {
+          .progress-bar {
+            right: 85px;
+            top: 98px;
+            width: 180px;
+            height: 8px !important;
+
+            .MuiLinearProgress-root {
+              height: 8px !important;
+
+              .MuiLinearProgress-bar {
+                border-radius: 4px;
+              }
+            }
+          }
+
+          .text-container {
+            padding-left: 28px;
+            gap: 34px;
+
+            p {
+              font-size: 19px;
+            }
+          }
+        }
+
+        .show {
+          gap: 32px;
+          img {
+            height: 180px;
+          }
+          p {
+            font-size: 16px;
+            line-height: 25px;
+            letter-spacing: 0.8px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .why {
+    padding: 30px;
+
+    .why-container {
+      border-radius: 16px;
+      gap: 50px;
+      padding: 50px;
+
+      h2 {
+        font-size: 32px;
+      }
+
+      .progress {
+        justify-content: center;
+        flex-direction: column;
+        gap: 60px;
+        .progress-box {
+          .progress-bar {
+            right: 90px;
+            top: 100px;
+            width: 180px;
+            height: 10px !important;
+
+            .MuiLinearProgress-root {
+              height: 6px !important;
+              border-radius: 3px;
+
+              .MuiLinearProgress-bar {
+                border-radius: 3px;
+              }
+            }
+          }
+
+          .text-container {
+            padding-left: 30px;
+            gap: 30;
+
+            p {
+              font-size: 20px;
+            }
+          }
+        }
+
+        .show {
+          width: 100%;
+          align-items: center;
+          flex-direction: row;
+          gap: 30px;
+          img {
+            height: 180px;
+          }
+          p {
+            font-size: 18px;
+            line-height: 28px;
+            letter-spacing: 1.2px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .why {
+    padding: 40px 20px;
+
+    .why-container {
+      border-radius: 14px;
+      gap: 40px;
+      padding: 20px;
+      align-items: center;
+
+      h2 {
+        font-size: 28px;
+        text-align: center;
+      }
+
+      .progress {
+        gap: 50px;
+        .progress-box {
+          .progress-bar {
+            right: 100px;
+            top: 110px;
+            width: 200px;
+            height: 8px !important;
+
+            .MuiLinearProgress-root {
+              height: 5px !important;
+            }
+          }
+
+          .text-container {
+            padding-left: 20px;
+            gap: 25px;
+            p {
+              font-size: 20px;
+              line-height: 25px;
+            }
+          }
+        }
+
+        .show {
+          flex-direction: column;
+          gap: 20px;
+          img {
+            height: 160px;
+          }
+          p {
+            font-size: 14.5px;
+            line-height: 24px;
+            letter-spacing: 1px;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}

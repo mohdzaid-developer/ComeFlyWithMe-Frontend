@@ -1,1 +1,611 @@
-@import "../../../index.scss";
+@import "@/index.scss";
+
+footer {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  transition: all 0.8s ease-out;
+  background-image: url("@/assets/footerImg.webp");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 2vh 50px;
+  padding-top: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+
+  .heading {
+    font-size: 48px;
+    text-align: center;
+    color: $white;
+    line-height: 55px;
+    span {
+      display: block;
+    }
+  }
+
+  .form-footer {
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 10px;
+    padding: 80px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+
+    .content {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h2 {
+        font-size: 60px;
+        color: $white;
+      }
+      img {
+        height: 30px;
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
+    }
+
+    .form-container {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 100px;
+
+      .form-container-left {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 50px;
+
+        div {
+          width: 100%;
+          input {
+            width: 100%;
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid $white;
+            color: $white;
+            padding: 20px 10px;
+            &::placeholder {
+              color: $white;
+            }
+          }
+        }
+      }
+
+      .form-container-right {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        flex-direction: column;
+        gap: 50px;
+
+        .input {
+          width: 100%;
+
+          .title {
+            color: $white;
+            margin-bottom: 10px;
+          }
+          textarea {
+            outline: none;
+            border: 1px solid white;
+            background-color: transparent;
+            width: 100%;
+            height: 150px;
+            border-radius: 5px;
+            color: $white;
+            padding: 10px;
+            padding-top: 10px;
+            resize: none;
+          }
+        }
+
+        button {
+          background-color: transparent;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 20px;
+          font-size: 24px;
+          color: $white;
+          border-radius: 18px;
+
+          img {
+            height: 30px;
+          }
+        }
+      }
+    }
+  }
+
+  .links {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    .links-left {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 40px;
+
+      .page-links {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 30px;
+        a {
+          color: $white;
+          font-size: 22px;
+        }
+      }
+
+      .socials {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 60px;
+      }
+    }
+
+    .links-right {
+      button {
+        background-color: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        font-size: 24px;
+        color: $white;
+        border: 1px solid $white;
+        border-radius: 18px;
+        padding: 24px 22px;
+
+        img {
+          height: 30px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1700px) {
+  footer {
+    padding: 6vh 40px;
+
+    .heading {
+      font-size: 40px;
+      line-height: 50px;
+    }
+
+    .form-footer {
+      padding: 50px 40px;
+      gap: 36px;
+
+      .content {
+        h2 {
+          font-size: 46px;
+        }
+        img {
+          height: 23px;
+          top: 14px;
+          right: 14px;
+        }
+      }
+
+      .form-container {
+        gap: 70px;
+
+        .form-container-left {
+          gap: 40px;
+
+          input {
+            padding: 17px 7px;
+          }
+        }
+
+        .form-container-right {
+          gap: 36px;
+
+          .input {
+            p {
+              margin-bottom: 6px;
+            }
+            input {
+              height: 120px;
+            }
+          }
+
+          button {
+            gap: 16px;
+            font-size: 20px;
+
+            img {
+              height: 20px;
+            }
+          }
+        }
+      }
+    }
+
+    .links {
+      .links-left {
+        gap: 32px;
+
+        .page-links {
+          gap: 26px;
+          a {
+            font-size: 18px;
+          }
+        }
+
+        .socials {
+          gap: 36px;
+          img {
+            height: 24px;
+          }
+        }
+      }
+
+      .links-right {
+        button {
+          gap: 18px;
+          font-size: 20px;
+          padding: 20px 18px;
+
+          img {
+            height: 24px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1500px) {
+  footer {
+    padding: 5vh 36px;
+
+    .heading {
+      font-size: 38px;
+      line-height: 48px;
+    }
+
+    .form-footer {
+      padding: 44px 36px;
+      gap: 32px;
+
+      .content {
+        h2 {
+          font-size: 42px;
+        }
+        img {
+          height: 21px;
+          top: 12px;
+          right: 12px;
+        }
+      }
+
+      .form-container {
+        gap: 60px;
+
+        .form-container-left {
+          gap: 35px;
+
+          input {
+            padding: 16px 6px;
+          }
+        }
+
+        .form-container-right {
+          gap: 32px;
+
+          .input {
+            p {
+              margin-bottom: 5px;
+            }
+            input {
+              height: 110px;
+            }
+          }
+
+          button {
+            gap: 15px;
+            font-size: 19px;
+
+            img {
+              height: 18px;
+            }
+          }
+        }
+      }
+    }
+
+    .links {
+      .links-left {
+        gap: 30px;
+
+        .page-links {
+          gap: 24px;
+          a {
+            font-size: 16px;
+          }
+        }
+
+        .socials {
+          gap: 32px;
+          img {
+            height: 22px;
+          }
+        }
+      }
+
+      .links-right {
+        button {
+          gap: 16px;
+          font-size: 18px;
+          padding: 19px 17px;
+
+          img {
+            height: 22px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  footer {
+    padding: 5vh 34px;
+
+    .heading {
+      font-size: 36px;
+      line-height: 44px;
+    }
+
+    .form-footer {
+      padding: 42px 34px;
+      gap: 30px;
+
+      .content {
+        h2 {
+          font-size: 40px;
+        }
+        img {
+          height: 20px;
+          top: 12px;
+          right: 12px;
+        }
+      }
+
+      .form-container {
+        gap: 50px;
+
+        .form-container-left {
+          gap: 32px;
+
+          input {
+            padding: 15px 5px;
+          }
+        }
+
+        .form-container-right {
+          gap: 30px;
+
+          .input {
+            p {
+              margin-bottom: 4px;
+            }
+            input {
+              height: 100px;
+            }
+          }
+
+          button {
+            gap: 14px;
+            font-size: 18px;
+
+            img {
+              height: 16px;
+            }
+          }
+        }
+      }
+    }
+
+    .links {
+      .links-left {
+        gap: 28px;
+
+        .page-links {
+          gap: 22px;
+          a {
+            font-size: 14px;
+          }
+        }
+
+        .socials {
+          gap: 30px;
+          img {
+            height: 21px;
+          }
+        }
+      }
+
+      .links-right {
+        button {
+          gap: 14px;
+          font-size: 17px;
+          padding: 17px 16px;
+
+          img {
+            height: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  footer {
+    padding: 5vh 15px;
+    padding-top: 15vh;
+
+    .heading {
+      text-align: center;
+      font-size: 24px;
+      line-height: 32px;
+      text-align: center;
+      span {
+        display: inline;
+      }
+    }
+
+    .form-footer {
+      width: 85%;
+      padding: 25px 30px;
+      gap: 20px;
+
+      .content {
+        justify-content: center;
+        h2 {
+          font-size: 28px;
+        }
+        img {
+          height: 18px;
+          top: 10px;
+          right: 10px;
+        }
+      }
+
+      .form-container {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 30px;
+
+        .form-container-left {
+          width: 100%;
+          gap: 25px;
+
+          div {
+            input {
+              font-size: 13px;
+
+              padding: 10px 5px;
+              &::placeholder {
+                color: $white;
+              }
+            }
+          }
+        }
+
+        .form-container-right {
+          width: 100%;
+          gap: 40px;
+
+          .input {
+            width: 100%;
+
+            .title {
+              margin-bottom: 5px;
+              font-size: 13px;
+            }
+            textarea {
+              font-size: 13px;
+              height: 100px;
+              padding: 8px;
+              padding-top: 8px;
+            }
+          }
+
+          button {
+            gap: 18px;
+            font-size: 18px;
+            border-radius: 16px;
+            padding: 16px 14px;
+
+            img {
+              height: 20px;
+            }
+          }
+        }
+      }
+    }
+
+    .links {
+      justify-content: center;
+      align-items: center;
+      flex-direction: column-reverse;
+      gap: 30px;
+
+      .links-left {
+        gap: 30px;
+        align-items: center;
+
+        .page-links {
+          flex-direction: row;
+          gap: 20px;
+          a {
+            text-align: center;
+            font-size: 13px;
+            letter-spacing: 0.8px;
+          }
+        }
+
+        .socials {
+          gap: 40px;
+          a {
+            img {
+              height: 25px;
+            }
+          }
+        }
+      }
+
+      .links-right {
+        button {
+          gap: 18px;
+          font-size: 20px;
+
+          border-radius: 16px;
+          padding: 20px 18px;
+
+          img {
+            height: 22px;
+          }
+        }
+      }
+    }
+  }
+}
